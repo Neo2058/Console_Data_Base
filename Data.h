@@ -5,8 +5,9 @@
 #include <fstream>
 #include <Windows.h>
 
+//------------------------------------------------------------------------------------------------
 using namespace std;
-
+//------------------------------------------------------------------------------------------------
 /*
 	Данные:
 	1. ФИО
@@ -14,23 +15,27 @@ using namespace std;
 	3. ФИО ТЧМ и № Колонны
 
 */
-
+//------------------------------------------------------------------------------------------------
 struct Initials
 {
-	string surname, name, patrinymic;
+	string surname, 
+		   name, 
+		   patrinymic;
 };
-
+//------------------------------------------------------------------------------------------------
 struct Date
 {
-	int day, month, year;
+	int day, 
+		month, 
+		year;
 };
-
+//------------------------------------------------------------------------------------------------
 struct Address
 {
 	string city;
 	int home;
 };
-
+//------------------------------------------------------------------------------------------------
 //Прототип класса
 class Data
 {
@@ -40,9 +45,9 @@ private:
 	Address address;
 
 public:
+	~Data();
 	Data();
 	Data(Initials initialisation, Date date, Address address);
-	~Data();
 
 	void Print();
 	void Data_Entry(Initials initialisation, Date date, Address address);
@@ -53,3 +58,4 @@ public:
 
 	Data& operator = (Data d_o);
 };
+//------------------------------------------------------------------------------------------------
